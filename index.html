@@ -5,64 +5,271 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta
+    name="description"
+    content="Academic profile of Dr Farnaz Pourzand, Senior Research Fellow at the University of Otago, working across environmental epidemiology, cancer epidemiology, climate and health, machine learning, and public health."
+  >
+
   <title>Farnaz Pourzand, PhD | Academic Profile</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
+      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 50px 25px;
-      line-height: 1.7;
       color: #222;
-      background-color: #fff;
+      background: #ffffff;
+      line-height: 1.65;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.97);
+      border-bottom: 1px solid #e5e5e5;
+      z-index: 1000;
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 64px;
+      gap: 20px;
+    }
+
+    .nav-name {
+      font-weight: 700;
+      font-size: 17px;
+      color: #1f2933;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      color: #444;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #0b65c2;
+    }
+
+    header {
+      padding: 85px 0 65px;
+      background: #f7f9fb;
+      border-bottom: 1px solid #e6e9ec;
     }
 
     h1 {
-      font-size: 38px;
-      margin-bottom: 5px;
+      font-size: 46px;
+      margin: 0 0 10px;
+      color: #18222d;
+      line-height: 1.15;
+    }
+
+    .position {
+      font-size: 21px;
+      margin-bottom: 16px;
+      color: #4c5967;
+    }
+
+    .headline {
+      max-width: 880px;
+      font-size: 18px;
+      color: #46515c;
+      margin-bottom: 24px;
+    }
+
+    .profile-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .profile-links a {
+      display: inline-block;
+      padding: 9px 14px;
+      border: 1px solid #bcc7d2;
+      border-radius: 6px;
+      color: #185f9f;
+      text-decoration: none;
+      font-size: 14px;
+      background: white;
+    }
+
+    .profile-links a:hover {
+      border-color: #185f9f;
+    }
+
+    main {
+      padding: 20px 0 70px;
+    }
+
+    section {
+      padding: 48px 0 8px;
     }
 
     h2 {
-      margin-top: 40px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 7px;
+      font-size: 28px;
+      color: #18222d;
+      margin: 0 0 24px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e5e9ed;
     }
 
-    .subtitle {
+    h3 {
       font-size: 19px;
-      color: #555;
+      color: #253442;
+      margin-bottom: 8px;
     }
 
-    .areas {
-      color: #444;
-      margin-top: 15px;
-      line-height: 1.6;
+    p {
+      margin-top: 0;
+    }
+
+    .lead {
+      font-size: 17px;
+      max-width: 900px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      background: #eef3f7;
+      border-radius: 18px;
+      padding: 7px 12px;
+      font-size: 14px;
+      color: #344453;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      border: 1px solid #e1e5e8;
+      border-radius: 8px;
+      padding: 20px;
+      background: #fff;
+    }
+
+    .card p:last-child,
+    .card ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .role {
+      margin-bottom: 28px;
+    }
+
+    .role-title {
+      font-weight: 700;
+      font-size: 18px;
+      color: #233240;
+    }
+
+    .role-meta {
+      color: #66727d;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .publication {
+      margin-bottom: 20px;
+    }
+
+    .publication-title {
+      font-weight: 700;
+      color: #263746;
+    }
+
+    .publication-meta {
+      color: #5a6772;
+      font-size: 15px;
     }
 
     a {
       color: #1769aa;
-      text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .year {
+      display: inline-block;
+      min-width: 58px;
+      font-weight: 700;
+      color: #31495c;
     }
 
-    .links {
-      margin-top: 20px;
-    }
-
-    .links a {
-      margin-right: 15px;
+    .small {
+      color: #66727d;
+      font-size: 14px;
     }
 
     footer {
-      margin-top: 60px;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
-      color: #777;
+      padding: 30px 0 50px;
+      border-top: 1px solid #e5e5e5;
+      color: #6a737d;
       font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      h1 {
+        font-size: 36px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav .container {
+        align-items: flex-start;
+        flex-direction: column;
+        padding-top: 14px;
+        padding-bottom: 14px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      header {
+        padding-top: 55px;
+      }
     }
   </style>
 </head>
@@ -70,194 +277,893 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="container">
+      <div class="nav-name">Farnaz Pourzand, PhD</div>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#positions">Positions</a>
+        <a href="#publications">Publications</a>
+        <a href="#grants">Grants</a>
+        <a href="#education">Education</a>
+        <a href="#awards">Awards</a>
+        <a href="#service">Service</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
 
   <header>
+    <div class="container">
 
-    <h1>Farnaz Pourzand, PhD</h1>
+      <h1>Farnaz Pourzand, PhD</h1>
 
-    <div class="subtitle">
-      Senior Research Fellow | University of Otago
+      <div class="position">
+        Senior Research Fellow · Department of Public Health · University of Otago
+      </div>
+
+      <div class="headline">
+        Environmental & Spatial Epidemiology · Cancer Epidemiology ·
+        Climate & Health · Infectious Diseases ·
+        Machine Learning & Explainable AI · Health & Environmental Economics
+      </div>
+
+      <div class="profile-links">
+
+        <a href="https://github.com/FarnazandinAIGit" target="_blank">
+          GitHub
+        </a>
+
+        <!-- Replace # with your Google Scholar URL -->
+        <a href="#" target="_blank">
+          Google Scholar
+        </a>
+
+        <!-- Replace # with your ORCID URL -->
+        <a href="#" target="_blank">
+          ORCID
+        </a>
+
+        <!-- Replace # with your LinkedIn URL -->
+        <a href="#" target="_blank">
+          LinkedIn
+        </a>
+
+      </div>
+
     </div>
-
-    <div class="areas">
-      Environmental & Spatial Epidemiology · Cancer Epidemiology ·
-      Public Health · Climate & Health ·
-      Machine Learning & Explainable AI
-    </div>
-
-    <div class="links">
-      <a href="https://github.com/FarnazandinAIGit">GitHub</a>
-      <a href="#">Google Scholar</a>
-      <a href="#">ORCID</a>
-      <a href="#">LinkedIn</a>
-    </div>
-
   </header>
 
 
-  <!-- ABOUT -->
-
-  <h2>About</h2>
-
-  <p>
-    I am a Senior Research Fellow at the University of Otago, New Zealand,
-    with an interdisciplinary background spanning epidemiology, economics,
-    data science, and artificial intelligence.
-  </p>
-
-  <p>
-    My research focuses on environmental, spatial, and cancer epidemiology,
-    infectious diseases, climate change and health, water quality, health
-    equity, and the application of machine learning and explainable AI to
-    population health and clinical research.
-  </p>
+  <main>
+    <div class="container">
 
 
-  <!-- RESEARCH INTERESTS -->
+      <!-- ABOUT -->
 
-  <h2>Research Interests</h2>
+      <section id="about">
 
-  <ul>
-    <li>Environmental and spatial epidemiology</li>
-    <li>Cancer epidemiology and prognostic modelling</li>
-    <li>Climate change and health</li>
-    <li>Water quality and infectious diseases</li>
-    <li>Machine learning and explainable artificial intelligence</li>
-    <li>Health equity and population health</li>
-    <li>Environmental and health economics</li>
-  </ul>
+        <h2>About</h2>
 
+        <p class="lead">
+          I am an interdisciplinary researcher working at the intersection of
+          epidemiology, data science, machine learning, economics, and
+          environmental health. My research applies quantitative and
+          data-driven methods to population-health, environmental, clinical,
+          and policy questions.
+        </p>
 
-  <!-- CURRENT RESEARCH -->
+        <p class="lead">
+          My current work focuses particularly on environmental and spatial
+          epidemiology, drinking-water quality and infectious diseases,
+          climate and health, health equity, cancer epidemiology, and the
+          application of machine learning and explainable artificial
+          intelligence to health research.
+        </p>
 
-  <h2>Current Research</h2>
+        <div class="tags">
+          <span class="tag">Environmental Epidemiology</span>
+          <span class="tag">Spatial Epidemiology</span>
+          <span class="tag">Cancer Epidemiology</span>
+          <span class="tag">Infectious Diseases</span>
+          <span class="tag">Climate & Health</span>
+          <span class="tag">Health Equity</span>
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Explainable AI</span>
+          <span class="tag">Survival Analysis</span>
+          <span class="tag">Health Economics</span>
+        </div>
 
-  <p>
-    My current research includes the development of machine-learning
-    approaches for predicting microbial contamination and associated
-    health outcomes in drinking-water systems, investigation of
-    environmental determinants of enteric infectious diseases, and
-    AI-enabled approaches to health equity and clinical decision analytics.
-  </p>
-
-  <p>
-    I am also interested in cancer epidemiology and the development of
-    explainable machine-learning and survival-analysis approaches for
-    individualised risk stratification and prognostic modelling.
-  </p>
-
-
-  <!-- EDUCATION -->
-
-  <h2>Education</h2>
-
-  <p>
-    <strong>PhD in Economics</strong><br>
-    Victoria University of Wellington, New Zealand
-  </p>
-
-  <p>
-    <strong>Postgraduate Program in Artificial Intelligence and Machine Learning</strong><br>
-    The University of Texas at Austin, USA
-  </p>
-
-  <p>
-    <strong>MSc in Agricultural Economics</strong><br>
-    Shiraz University, Iran
-  </p>
-
-  <p>
-    <strong>BSc in Agricultural Economics</strong><br>
-    Shiraz University, Iran
-  </p>
+      </section>
 
 
-  <!-- METHODS -->
+      <!-- RESEARCH -->
 
-  <h2>Research Methods & Technical Expertise</h2>
+      <section id="research">
 
-  <p>
-    Epidemiological study design · Spatial and spatiotemporal analysis ·
-    Survival analysis · Cox proportional hazards models ·
-    Regression modelling · Random Forest · XGBoost ·
-    Explainable AI (SHAP) · GIS · Administrative health data linkage ·
-    Machine learning · Statistical modelling
-  </p>
+        <h2>Research</h2>
 
+        <div class="grid">
 
-  <!-- PUBLICATIONS -->
+          <div class="card">
+            <h3>Environmental & Infectious Disease Epidemiology</h3>
+            <p>
+              Investigation of drinking-water quality, rurality, agricultural
+              exposures, rainfall, climate, and other environmental
+              determinants of enteric infectious diseases.
+            </p>
+          </div>
 
-  <h2>Selected Publications</h2>
+          <div class="card">
+            <h3>Cancer Epidemiology</h3>
+            <p>
+              Experience working with cancer cohorts, mortality,
+              comorbidity, ethnicity, surgical treatment, radiation treatment,
+              and systemic treatment datasets, alongside research on cancer
+              care and health equity.
+            </p>
+          </div>
 
-  <p>
-    My publications span environmental epidemiology, infectious diseases,
-    climate and health, health equity, environmental economics, and
-    machine-learning applications in population health.
-  </p>
+          <div class="card">
+            <h3>Machine Learning & Explainable AI</h3>
+            <p>
+              Application of Random Forest, XGBoost, survival methods,
+              explainable AI and SHAP-based approaches to environmental,
+              population-health, and clinical research.
+            </p>
+          </div>
 
-  <p>
-    A selected publication list will be added here.
-  </p>
+          <div class="card">
+            <h3>Climate, Environment & Economics</h3>
+            <p>
+              Research on drought, climate change, agricultural profitability,
+              land values, climate adaptation, environmental policy, and
+              natural-resource management.
+            </p>
+          </div>
 
-
-  <!-- GRANTS -->
-
-  <h2>Research Grants & Projects</h2>
-
-  <p>
-    I have contributed to and led research projects spanning environmental
-    epidemiology, drinking-water safety, infectious diseases, climate change,
-    cancer research, health equity, and machine learning.
-  </p>
-
-
-  <!-- AWARDS -->
-
-  <h2>Awards & Honours</h2>
-
-  <p>
-    Research awards, grants, travel awards, and other academic honours
-    will be listed here.
-  </p>
-
-
-  <!-- PROFESSIONAL ACTIVITIES -->
-
-  <h2>Professional Activities</h2>
-
-  <p>
-    My professional activities include peer review, editorial activities,
-    conference presentations, interdisciplinary research collaborations,
-    and membership in professional epidemiological and scientific
-    associations.
-  </p>
+        </div>
 
 
-  <!-- CV -->
+        <h3 style="margin-top: 34px;">Current Research</h3>
 
-  <h2>Curriculum Vitae</h2>
+        <ul>
+          <li>
+            Prediction of microbial contamination and related health outcomes
+            in New Zealand drinking-water systems using a three-stage
+            machine-learning approach.
+          </li>
 
-  <p>
-    A complete academic CV will be available here.
-  </p>
+          <li>
+            Environmental and spatial determinants of enteric infectious
+            diseases in Aotearoa New Zealand.
+          </li>
+
+          <li>
+            Climate and extreme rainfall influences on infectious-disease risk.
+          </li>
+
+          <li>
+            AI-enabled approaches to population-health, health equity,
+            prognostic modelling, and clinical decision analytics.
+          </li>
+
+          <li>
+            Cancer epidemiology, survival analysis, and explainable
+            machine-learning approaches to individualised risk stratification.
+          </li>
+        </ul>
+
+      </section>
 
 
-  <!-- CONTACT -->
+      <!-- POSITIONS -->
 
-  <h2>Contact</h2>
+      <section id="positions">
 
-  <p>
-    Department of Public Health<br>
-    University of Otago<br>
-    Wellington, New Zealand
-  </p>
+        <h2>Academic & Research Positions</h2>
+
+        <div class="role">
+          <div class="role-title">
+            Senior Research Fellow
+          </div>
+
+          <div class="role-meta">
+            Department of Public Health, University of Otago · 2026–present
+          </div>
+
+          <p>
+            Principal Investigator of the University of Otago Research Grant
+            project:
+            <em>
+              Prediction of microbial contamination and related health outcomes
+              in New Zealand's drinking water systems: a three-stage machine
+              learning approach.
+            </em>
+          </p>
+        </div>
 
 
-  <!-- FOOTER -->
+        <div class="role">
+          <div class="role-title">
+            Research Fellow — Health Environment & Infection Research Unit
+          </div>
+
+          <div class="role-meta">
+            University of Otago · 2021–2025
+          </div>
+
+          <p>
+            Led data collection and integration of health, environmental and
+            spatial data; conducted biostatistical, machine-learning and
+            geospatial analyses; interpreted and visualised results; and
+            contributed to research publications and funding applications.
+          </p>
+        </div>
+
+
+        <div class="role">
+          <div class="role-title">
+            Researcher — Cancer and Chronic Conditions Research Group
+          </div>
+
+          <div class="role-meta">
+            University of Otago · 2024–2025
+          </div>
+
+          <p>
+            Developed cancer cohort and linked treatment datasets, including
+            mortality, comorbidity, ethnicity, domicile, surgery, radiation,
+            and systemic treatment modules, and contributed to quantitative
+            analyses of cancer-care pathways.
+          </p>
+        </div>
+
+
+        <div class="role">
+          <div class="role-title">
+            Senior Policy/Data Analyst
+          </div>
+
+          <div class="role-meta">
+            Ministry for Primary Industries, New Zealand · 2019–2021
+          </div>
+
+          <p>
+            Developed a decision-support tool for drought-relief policy by
+            translating climate data into estimated agricultural financial
+            losses across locations and industries.
+          </p>
+        </div>
+
+
+        <div class="role">
+          <div class="role-title">
+            Researcher
+          </div>
+
+          <div class="role-meta">
+            Motu Economic and Public Policy Research · 2019–2021
+          </div>
+
+          <p>
+            Investigated the empirical effects of drought and climate change
+            on agricultural productivity, profitability, and land values in
+            New Zealand.
+          </p>
+        </div>
+
+
+        <div class="role">
+          <div class="role-title">
+            Lecturer
+          </div>
+
+          <div class="role-meta">
+            Universities in Iran · 2010–2016
+          </div>
+
+          <p>
+            Taught economics, econometrics, agricultural economics,
+            development economics, project analysis and evaluation, and
+            related quantitative subjects.
+          </p>
+        </div>
+
+      </section>
+
+
+      <!-- PUBLICATIONS -->
+
+      <section id="publications">
+
+        <h2>Selected Publications</h2>
+
+
+        <div class="publication">
+          <div class="publication-title">
+            Constructing community- and outcome-specific weather and air health
+            risk indices using explainable machine learning: A multicentre study
+            in 66 Australian communities
+          </div>
+
+          <div class="publication-meta">
+            Li Z, Xu R, Huang W, Zhou S, <strong>Pourzand F</strong>, et al.
+            · Environmental Pollution · 2026
+          </div>
+
+          <a
+            href="https://doi.org/10.1016/j.envpol.2026.129117"
+            target="_blank">
+            DOI
+          </a>
+        </div>
+
+
+        <div class="publication">
+          <div class="publication-title">
+            Denominator choice, age-standardisation, and the epidemiology of
+            enteric infection hospitalisations among Māori in Aotearoa
+            New Zealand: methodological implications for health equity research
+          </div>
+
+          <div class="publication-meta">
+            Kim AHM, Stairmand J, <strong>Pourzand F</strong>, et al.
+            · Journal of Health Equity · 2026
+          </div>
+        </div>
+
+
+        <div class="publication">
+          <div class="publication-title">
+            Drinking water quality and enteric disease: a nationwide
+            case-crossover study (2015–2019) in New Zealand
+          </div>
+
+          <div class="publication-meta">
+            Chambers T, Hales S, <strong>Pourzand F</strong>, et al.
+            · Journal of Exposure Science & Environmental Epidemiology · 2026
+          </div>
+
+          <a
+            href="https://doi.org/10.1038/s41370-026-00857-8"
+            target="_blank">
+            DOI
+          </a>
+        </div>
+
+
+        <div class="publication">
+          <div class="publication-title">
+            Examining campylobacteriosis disease notification rates:
+            Association with water supply characteristics
+          </div>
+
+          <div class="publication-meta">
+            <strong>Pourzand F</strong>, Kim AHM, Chambers T, Grout L,
+            Baker MG, Hales S · Environmental Research · 2025
+          </div>
+
+          <a
+            href="https://doi.org/10.1016/j.envres.2025.121064"
+            target="_blank">
+            DOI
+          </a>
+        </div>
+
+
+        <div class="publication">
+          <div class="publication-title">
+            How spatial differences in climate affect agricultural land values
+            in New Zealand
+          </div>
+
+          <div class="publication-meta">
+            <strong>Pourzand F</strong> · Weather, Climate, and Society · 2024
+          </div>
+
+          <a
+            href="https://doi.org/10.1175/WCAS-D-24-0042.1"
+            target="_blank">
+            DOI
+          </a>
+        </div>
+
+
+        <div class="publication">
+          <div class="publication-title">
+            Tropical cyclone-specific mortality risks and the periods of
+            concern: A multicountry time-series study
+          </div>
+
+          <div class="publication-meta">
+            Huang W, Yang Z, Zhang Y, et al., including
+            <strong>Pourzand F</strong> · PLOS Medicine · 2024
+          </div>
+
+          <a
+            href="https://doi.org/10.1371/journal.pmed.1004341"
+            target="_blank">
+            DOI
+          </a>
+        </div>
+
+
+        <div class="publication">
+          <div class="publication-title">
+            Health and climate change: adaptation policy in Aotearoa New Zealand
+          </div>
+
+          <div class="publication-meta">
+            <strong>Pourzand F</strong>, Bolton A, Salter C, Hales S,
+            Woodward A · The Lancet Regional Health – Western Pacific · 2023
+          </div>
+
+          <a
+            href="https://doi.org/10.1016/j.lanwpc.2023.100954"
+            target="_blank">
+            DOI
+          </a>
+        </div>
+
+
+        <div class="publication">
+          <div class="publication-title">
+            Regional differences in the effects of drought events on farm
+            profitability in New Zealand
+          </div>
+
+          <div class="publication-meta">
+            <strong>Pourzand F</strong> · Environmental Hazards · 2022
+          </div>
+
+          <a
+            href="https://doi.org/10.1080/17477891.2022.2141180"
+            target="_blank">
+            DOI
+          </a>
+        </div>
+
+
+        <div class="publication">
+          <div class="publication-title">
+            Catastrophic Droughts and Their Economic Consequences
+          </div>
+
+          <div class="publication-meta">
+            <strong>Pourzand F</strong>, Noy I ·
+            Oxford Research Encyclopedia of Environmental Science · 2022
+          </div>
+
+          <a
+            href="https://doi.org/10.1093/acrefore/9780199389414.013.689"
+            target="_blank">
+            DOI
+          </a>
+        </div>
+
+
+        <div class="publication">
+          <div class="publication-title">
+            Droughts and farms' financial performance: A farm-level study
+            in New Zealand
+          </div>
+
+          <div class="publication-meta">
+            <strong>Pourzand F</strong>, Noy I, Sağlam Y ·
+            Australian Journal of Agricultural and Resource Economics · 2020
+          </div>
+
+          <a
+            href="https://doi.org/10.1111/1467-8489.12367"
+            target="_blank">
+            DOI
+          </a>
+        </div>
+
+
+        <p class="small">
+          Additional peer-reviewed articles, working papers, manuscripts,
+          conference presentations, and public-health communications are
+          available through my academic profiles and full CV.
+        </p>
+
+      </section>
+
+
+      <!-- GRANTS -->
+
+      <section id="grants">
+
+        <h2>Research Grants</h2>
+
+        <ul>
+          <li>
+            <span class="year">2026</span>
+            University of Otago Research Grant — Principal Investigator
+          </li>
+
+          <li>
+            <span class="year">2023–25</span>
+            Te Niwha: Infectious Diseases Research Platform, New Zealand —
+            Co-Investigator
+          </li>
+
+          <li>
+            <span class="year">2021–24</span>
+            Health Research Council Grant, New Zealand —
+            Co-Investigator
+          </li>
+
+          <li>
+            <span class="year">2021–23</span>
+            Deep South National Science Challenge Grant —
+            Co-Investigator
+          </li>
+
+          <li>
+            <span class="year">2019–20</span>
+            Deep South National Science Challenge and Manaaki Whenua
+            Landcare Research Grant — Co-Investigator
+          </li>
+        </ul>
+
+      </section>
+
+
+      <!-- EDUCATION -->
+
+      <section id="education">
+
+        <h2>Education & Advanced Training</h2>
+
+
+        <div class="role">
+          <div class="role-title">
+            Postgraduate Certificate in Artificial Intelligence and Machine Learning
+          </div>
+
+          <div class="role-meta">
+            The University of Texas at Austin · 2023–2024 · A+ · Ranked 3rd
+          </div>
+
+          <p>
+            Training included Python, advanced statistical analysis,
+            machine learning, advanced machine learning, neural networks,
+            computer vision, natural language processing, and generative AI.
+          </p>
+        </div>
+
+
+        <div class="role">
+          <div class="role-title">
+            PhD in Economics of Disasters & Climate Change
+          </div>
+
+          <div class="role-meta">
+            Victoria University of Wellington · 2016–2021
+          </div>
+
+          <p>
+            Dissertation:
+            <em>Effect of Drought and Climate on Agriculture in New Zealand.</em>
+          </p>
+        </div>
+
+
+        <div class="role">
+          <div class="role-title">
+            MSc in Agricultural Economics
+          </div>
+
+          <div class="role-meta">
+            Shiraz University · 2007–2010
+          </div>
+        </div>
+
+
+        <div class="role">
+          <div class="role-title">
+            BSc in Agricultural Economics
+          </div>
+
+          <div class="role-meta">
+            Shiraz University · 2003–2007
+          </div>
+        </div>
+
+
+        <h3>Selected Advanced Training</h3>
+
+        <ul>
+          <li>Contemporary Epidemiology — University of Melbourne, 2025</li>
+
+          <li>
+            Western Pacific Climate and Health Responder Course —
+            Columbia University Mailman School of Public Health &
+            University of Sydney, 2025
+          </li>
+
+          <li>
+            GIS Techniques in Health Research and Policy —
+            University of Otago, 2024
+          </li>
+
+          <li>
+            Intermediate Biostatistics: Regression Methods —
+            University of Otago, 2023
+          </li>
+
+          <li>
+            Introduction to Epidemiology —
+            University of Otago, 2023
+          </li>
+
+          <li>
+            Introduction to Survival Analysis —
+            University of Otago, 2022
+          </li>
+
+          <li>
+            Health Econometrics and Policy Evaluation —
+            University of Oxford, 2021
+          </li>
+        </ul>
+
+      </section>
+
+
+      <!-- METHODS -->
+
+      <section id="methods">
+
+        <h2>Methods & Technical Expertise</h2>
+
+        <div class="grid">
+
+          <div class="card">
+            <h3>Epidemiology & Statistics</h3>
+            <ul>
+              <li>Epidemiological study design</li>
+              <li>Regression modelling</li>
+              <li>Poisson and count-data models</li>
+              <li>Survival analysis</li>
+              <li>Time-series and panel-data methods</li>
+              <li>Health-data linkage and analysis</li>
+            </ul>
+          </div>
+
+
+          <div class="card">
+            <h3>Machine Learning</h3>
+            <ul>
+              <li>Random Forest</li>
+              <li>XGBoost</li>
+              <li>Explainable AI and SHAP</li>
+              <li>Deep learning</li>
+              <li>Predictive modelling</li>
+              <li>Clinical and population-health applications</li>
+            </ul>
+          </div>
+
+
+          <div class="card">
+            <h3>Spatial & Environmental Analysis</h3>
+            <ul>
+              <li>GIS and spatial epidemiology</li>
+              <li>Environmental exposure assessment</li>
+              <li>Climate and health analysis</li>
+              <li>Spatial and spatiotemporal data integration</li>
+            </ul>
+          </div>
+
+
+          <div class="card">
+            <h3>Software</h3>
+            <p>
+              R · Python · SAS · Stata · SQL · EViews · GAMS · Frontier ·
+              ArcGIS · QGIS
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- AWARDS -->
+
+      <section id="awards">
+
+        <h2>Awards & Honours</h2>
+
+        <ul>
+          <li>
+            <span class="year">2026</span>
+            Maurice & Phyllis Paykel Trust Travel Grant
+          </li>
+
+          <li>
+            <span class="year">2025</span>
+            Nominated by the New Zealand Ministry for the Environment for
+            Lead Author role — IPCC Working Group II
+          </li>
+
+          <li>
+            <span class="year">2025</span>
+            University of Otago Accelerator Travel Grant
+          </li>
+
+          <li>
+            <span class="year">2025</span>
+            Kia Niwha Te Ao International Research Visit Award
+          </li>
+
+          <li>
+            <span class="year">2019</span>
+            Wellington International Student Excellence Award
+          </li>
+
+          <li>
+            <span class="year">2019</span>
+            Best Paper Award —
+            New Zealand Agricultural and Resource Economics Society
+          </li>
+
+          <li>
+            <span class="year">2018</span>
+            Heading West Award —
+            Australian Agricultural and Resource Economics Society
+          </li>
+
+          <li>
+            <span class="year">2018</span>
+            Postgraduate Award —
+            New Zealand Agricultural and Resource Economics Society
+          </li>
+
+          <li>
+            <span class="year">2016</span>
+            Chair in the Economics of Disasters and Climate Change Scholarship
+          </li>
+        </ul>
+
+      </section>
+
+
+      <!-- SERVICE -->
+
+      <section id="service">
+
+        <h2>Professional Service & Memberships</h2>
+
+
+        <h3>Professional Memberships</h3>
+
+        <ul>
+          <li>Australasian Epidemiological Association</li>
+          <li>International Society for Environmental Epidemiology</li>
+        </ul>
+
+
+        <h3>Peer Review</h3>
+
+        <p>
+          Invited reviewer for journals including:
+        </p>
+
+        <ul>
+          <li>Journal of Public Health Research</li>
+          <li>Environmental Research Communications</li>
+          <li>Environmental Research Letters</li>
+          <li>Regional Studies, Regional Science</li>
+          <li>Environmental Hazards</li>
+          <li>Economics of Disasters and Climate Change</li>
+        </ul>
+
+
+        <h3>Conference Review</h3>
+
+        <ul>
+          <li>
+            American Public Health Association Annual Meeting —
+            Environment Program
+          </li>
+
+          <li>
+            International Society for Environmental Epidemiology Conference
+          </li>
+        </ul>
+
+      </section>
+
+
+      <!-- PUBLIC ENGAGEMENT -->
+
+      <section id="engagement">
+
+        <h2>Public Engagement & Science Communication</h2>
+
+        <p>
+          My research has contributed to public-health communication and media
+          discussions on drinking-water safety, enteric diseases, climate
+          change, and environmental health in New Zealand.
+        </p>
+
+        <ul>
+          <li>
+            Public Health Communication Centre Aotearoa:
+            <em>
+              Unsafe Waters: The Hidden Campylobacter Infection Risk in Rural
+              New Zealand
+            </em>
+          </li>
+
+          <li>
+            Public Health Communication Centre Aotearoa:
+            <em>
+              Clean-ups are not enough: Government policy incoherent on climate
+              change
+            </em>
+          </li>
+
+          <li>
+            Media interviews and coverage including Radio New Zealand,
+            Newstalk ZB, NZ Herald, Otago Daily Times, and Scoop.
+          </li>
+        </ul>
+
+      </section>
+
+
+      <!-- CONTACT -->
+
+      <section id="contact">
+
+        <h2>Contact</h2>
+
+        <p>
+          <strong>Farnaz Pourzand, PhD</strong><br>
+          Senior Research Fellow<br>
+          Department of Public Health<br>
+          University of Otago<br>
+          Wellington, New Zealand
+        </p>
+
+        <p>
+          Email:
+          <a href="mailto:farnaz.pourzand@otago.ac.nz">
+            farnaz.pourzand@otago.ac.nz
+          </a>
+        </p>
+
+        <p>
+          GitHub:
+          <a
+            href="https://github.com/FarnazandinAIGit"
+            target="_blank">
+            github.com/FarnazandinAIGit
+          </a>
+        </p>
+
+      </section>
+
+
+    </div>
+  </main>
+
 
   <footer>
-    © 2026 Farnaz Pourzand
+    <div class="container">
+      © 2026 Farnaz Pourzand · Academic Profile
+    </div>
   </footer>
 
 </body>
